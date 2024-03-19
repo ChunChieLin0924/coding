@@ -35,7 +35,7 @@
 </head>
 
 <body>
-<img class="title" src="https://media.giphy.com/media/T3Vx6sVAXzuG4/giphy.gif?cid=790b7611onetjiomg25b2wgkgrmkbaqojxvij69tfbvnuc7n&ep=v1_gifs_trending&rid=giphy.gif&ct=g"  width="600rem" height="600rem" alt="POPCAT">
+<!--<img class="title" src="https://media.giphy.com/media/T3Vx6sVAXzuG4/giphy.gif?cid=790b7611onetjiomg25b2wgkgrmkbaqojxvij69tfbvnuc7n&ep=v1_gifs_trending&rid=giphy.gif&ct=g"  width="600rem" height="600rem" alt="POPCAT">-->
 <!--image's source path from pc or url(uniform resource locator ) -->
 <!-- class=attribute , class="tittle" which is value , src="" refers to file path(source) , alt=   -->
 
@@ -76,17 +76,63 @@
 
 <script>
 
+  let pop_count=0; //js es6 用let 以前用var
+
+  // pop_count=pop_count+1;
+  pop_count++; //後製運算 省略pop_count=pop_count+1;
+  console.log(pop_count);
+
+
+  let op=function open_popcat()
+  {
+
+    pop_count++;
+
+  }
+
+
+  let cat=document.getElementById("p"); //grab the paragraph from HTML DOM Elements
+let open_popcat=function()
+{
+
+
+
+  pop_count++;
+  cat.innerHTML=pop_count;
+
+  cat.id="op";
+
+
+  pop_audio=new Audio("pops/pop1.mp3");
+  pop_audio.load();
+  pop_audio.play();
+
+
+}
+
+  document.addEventListener("keydown",open_popcat);
+  document.addEventListener("click",open_popcat);
+cat.id="op"; // change the value of HTML DOM get from let cat=document.getElementById();
+
+
+  let close_popcat=function() //close the function when its done
+  {
+    cat.id="p";
+  }
+  document.addEventListener("keydown",open_popcat);
+  document.addEventListener("pointerdown",open_popcat);
+  document.addEventListener("keyup",close_popcat);
+  document.addEventListener("pointerup",close_popcat);
 
 
 
 
+  // cat.style.backgroundchange="imgs/op.png"
 
 
-
-
-
-
-
+  //
+  // open_popcat();
+  // open_popcat();
 
 
 
